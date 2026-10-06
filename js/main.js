@@ -13,25 +13,107 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* =========================================================
-   MOBILE MENU
+   MOBILE NAVIGATION
 ========================================================= */
 
-function initMobileMenu() {
+const menuButton = document.querySelector(".menu-button");
+const menuClose = document.querySelector(".menu-close");
+const mobileMenu = document.querySelector(".mobile-menu");
+const mobileLinks = document.querySelectorAll(".mobile-nav a");
 
-  const menuButton = document.querySelector(".menu-button");
-  const navLinks = document.querySelector(".nav-links");
 
-  if (!menuButton || !navLinks) {
-    return;
-  }
+function openMenu() {
 
-  menuButton.addEventListener("click", () => {
+  document.body.classList.add("menu-open");
 
-    navLinks.classList.toggle("is-open");
+  menuButton.setAttribute(
+    "aria-expanded",
+    "true"
+  );
 
-  });
+  menuButton.setAttribute(
+    "aria-label",
+    "Close navigation"
+  );
 
 }
+
+
+function closeMenu() {
+
+  document.body.classList.remove("menu-open");
+
+  menuButton.setAttribute(
+    "aria-expanded",
+    "false"
+  );
+
+  menuButton.setAttribute(
+    "aria-label",
+    "Open navigation"
+  );
+
+}
+
+
+/* Toggle */
+
+menuButton.addEventListener("click", () => {
+
+  const isOpen =
+    document.body.classList.contains("menu-open");
+
+  if (isOpen) {
+
+    closeMenu();
+
+  } else {
+
+    openMenu();
+
+  }
+
+});
+
+
+/* Close button */
+
+menuClose.addEventListener(
+  "click",
+  closeMenu
+);
+
+
+/* Close after selecting menu */
+
+mobileLinks.forEach((link) => {
+
+  link.addEventListener(
+    "click",
+    closeMenu
+  );
+
+});
+
+
+/* Close with Escape */
+
+document.addEventListener(
+  "keydown",
+  (event) => {
+
+    if (
+      event.key === "Escape" &&
+      document.body.classList.contains("menu-open")
+    ) {
+
+      closeMenu();
+
+    }
+
+  }
+);
+
 
 
 /* =========================================================

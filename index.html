@@ -17,35 +17,102 @@
 <body>
 
   <!-- =========================
-       NAVIGATION
-  ========================== -->
+     NAVIGATION
+========================== -->
 
-  <header class="nav">
+<header class="nav">
 
-    <div class="nav-inner">
+  <div class="nav-inner">
 
-      <a href="#" class="logo">
-        LEWLEW SITE
-      </a>
+    <a href="#" class="logo">
+      LEWLEW SITE
+    </a>
 
-      <nav class="nav-links">
-        <a href="#works">Works</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#news">News</a>
-        <a href="#fanclub">Fanclub</a>
-      </nav>
+    <!-- DESKTOP NAV -->
+    <nav class="nav-links">
+      <a href="#works">Works</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#news">News</a>
+      <a href="#fanclub">Fanclub</a>
+    </nav>
+
+    <!-- MOBILE MENU BUTTON -->
+    <button
+      class="menu-button"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false"
+    >
+      <span class="menu-text">Menu</span>
+      <span class="menu-icon">
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+
+  </div>
+
+</header>
+
+
+<!-- =========================
+     MOBILE NAVIGATION
+========================== -->
+
+<div class="mobile-menu">
+
+  <div class="mobile-menu-inner">
+
+    <div class="mobile-menu-header">
+
+      <span class="mobile-menu-label">
+        Navigation
+      </span>
 
       <button
-        class="menu-button"
+        class="menu-close"
         type="button"
-        aria-label="Open navigation"
+        aria-label="Close navigation"
       >
-        Menu
+        Close
       </button>
 
     </div>
 
-  </header>
+
+    <nav class="mobile-nav">
+
+      <a href="#works">
+        <span>01</span>
+        Works
+      </a>
+
+      <a href="#gallery">
+        <span>02</span>
+        Gallery
+      </a>
+
+      <a href="#news">
+        <span>03</span>
+        News
+      </a>
+
+      <a href="#fanclub">
+        <span>04</span>
+        Fanclub
+      </a>
+
+    </nav>
+
+
+    <div class="mobile-menu-footer">
+      Music / Moment / Memories
+    </div>
+
+  </div>
+
+</div>
+
 
 
   <!-- =========================
